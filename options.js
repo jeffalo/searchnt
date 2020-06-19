@@ -125,7 +125,11 @@ function saveDrop(item){
         obj.name === item.name ? { ...obj, from: from } : obj
     );
 
-    rulesArr = newState
+    var newerState = newState.map(obj =>
+        obj.name === item.name ? { ...obj, to: to } : obj
+    );
+
+    rulesArr = newerState
     save()
 }
 
